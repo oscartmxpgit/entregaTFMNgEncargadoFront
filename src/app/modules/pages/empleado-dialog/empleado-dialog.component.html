@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>{{actionHeader}} Empleado</h1>
+
+<div mat-dialog-content>
+
+    <form [formGroup]="empleadoForm">
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{"Employees.FullName" | translate}}</mat-label>
+        <input formControlName="nombre" name="nombre" matInput placeholder="Nombre y apellidos">
+
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>DNI</mat-label>
+        <input formControlName="dni" name="dni" matInput placeholder="DNI">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{"Employees.Phone" | translate}}</mat-label>
+        <input formControlName="telefono" name="telefono" matInput placeholder="">
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{"Employees.Email" | translate}}</mat-label>
+        <input formControlName="email" name="email" matInput placeholder="Escribe un correo">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{"password" | translate}}</mat-label>
+        <input type="password" formControlName="pass1" name="pass1" matInput placeholder="Escribe una contraseña">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{"password" | translate}}</mat-label>
+        <input type="password" formControlName="pass2" name="pass2" matInput placeholder="Repite la contraseña">
+      </mat-form-field>
+
+      <div *ngIf="errorMessage.length>0" class="alert alert-danger">
+        {{errorMessage}}
+    </div>
+    </form>
+
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close> {{"close" | translate}}</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addEmpleado()"> {{actionBtn}}</button>
+
+</div>

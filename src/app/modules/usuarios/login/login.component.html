@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="test">
+    <br /><br />
+    <div class="login-form">
+      <div *ngIf="notifyMessage" class="alert alert-success">
+        {{ notifyMessage }}
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="avatar"></div>
+        <h2 class="text-center">Login</h2>
+        <div class="form-group">
+          <label for="username">Usuario</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            formControlName="username"
+          />
+          <div *ngIf="isInvalidForm('username')" class="alert alert-danger">
+            <div *ngIf="isRequired('username')">Por favor introduce tu usuario.</div>
+
+            <div *ngIf="loginForm.controls['username'].errors.pattern">
+              Formato de usuario incorrecto
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">{{"password" | translate}}</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            formControlName="password"
+          />
+        </div>
+        <div class="form-group">
+          <button [disabled]="!loginForm.valid" type="submit" class="btn btn-primary btn-lg btn-block">
+            Entrar
+          </button>
+        </div>
+        <a class="nav-link" [routerLink]="['/register']">Registrarse </a>
+      </form>
+      <div *ngIf="error!=null" class="alert alert-danger">
+          Usuario o contraseña no válidos
+
+      </div>
+    </div>
+  </div>
+</div>

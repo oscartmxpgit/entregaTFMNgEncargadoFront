@@ -1,0 +1,101 @@
+{
+  "Pages": {
+    "Dashboard": {
+      "Title": "Dashboard",
+      "Headline": "eCarta - Admin",
+      "welcomeText": "Let's start! Once you've created bussinesses, you can select one of your one of them, you can create as many as you want!",
+      "welcomeText1": "The purpose of this website is to function as an application that allows the management of the entire sales process and tasks of businesses that provide gastronomic services.",
+      "welcomeText2": "The motivation of the work is the need to simplify the processes related to the management of tasks and sales in gastronomic businesses, from any place and device, synchronizing the information in real time.",
+      "aboutinfotutor": "Tutor",
+      "aboutinfoauthor": "Author"
+    },
+    "Stats": {
+      "Title": "Stats Lists",
+      "Headline": "Welcome to Stats"
+    },
+    "StatsList": {
+      "Title": "Stats List"
+    }
+  },
+  "Navbar": {
+    "business":"Businesses",
+    "1business":"Business",
+    "ManageBusiness":"Manage Business",
+    "Manager":"Manager",
+    "stats":"Stats",
+    "user":"User",
+    "about":"About"
+  },
+  "Sidenav": {
+    "business":"Businesses",
+    "home":"Home",
+    "employees":"Employees",
+    "tables":"Tables",
+    "dishes":"Dishes",
+    "cash":"Cash",
+    "input":"Inputs",
+    "providers":"Providers"
+  },
+  "Table":{
+    "CreateNew":"Create new",
+    "CreateNewTip":"Create a new element",
+    "Update":"Update",
+    "UpdateTip":"Update table",
+    "Filter":"Filter",
+    "Evaluate":"Evaluate"
+  },
+  "Paginator":{
+    "NextPage": "Next page",
+    "Previous page": "Previous page",
+    "First page": "First page",
+    "Last page": "Last page",
+    "of": "of"
+  },
+  "Auth":{
+    "Login": "Login",
+    "Logout": "Logout",
+    "Register": "Register"
+  },
+  "error404": "404 Error",
+  "angularStatsListsApp": "Angular eCarta app",
+  "close":"Close",
+  "password":"Password",
+  "actions":"Actions",
+  "Cash":{
+    "State":"State",
+    "Header":"Cash operation",
+    "Import":"Import",
+    "Type":"Type",
+    "Increment":"Increment",
+    "Decrement":"Decrement",
+    "Result":"Result",
+    "Product":"Product",
+    "OperationDate":"Operation Date",
+    "GrowthRate":"Growth Rate",
+    "Quantity":"Quantity"
+  },
+  "Bussines":{
+    "Name":"Name",
+    "Address":"Address",
+    "Type":"Bussines type"
+  },
+  "Employees":{
+    "FullName":"Full name",
+    "Phone":"Phone number",
+    "Email":"Email"
+  },
+  "Tables":{
+    "TableNum":"Table number",
+    "NumPersons":"Number of persons",
+    "RequestState":"Request State"
+  },
+  "Dishes":{
+    "Name":"Name",
+    "Price":"Price"
+  },
+  "Inputs":{
+    "Name":"Input Name",
+    "State":"Estado",
+    "Price":"Price"
+  }
+}

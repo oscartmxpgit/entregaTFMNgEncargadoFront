@@ -1,0 +1,72 @@
+<h1 mat-dialog-title>{{actionHeader}} operación caja</h1>
+<div mat-dialog-content>
+  <form [formGroup]="cajaForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Operación Caja</mat-label>
+      <input
+        formControlName="operacion"
+        matInput
+        placeholder="Detalle de la operación"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Importe</mat-label>
+      <input
+        formControlName="importe"
+        matInput
+        type="number"
+        placeholder="importe"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Producto</mat-label>
+      <input
+        formControlName="producto"
+        matInput
+        type="text"
+        placeholder="Producto"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Cantidad</mat-label>
+      <input
+        formControlName="cantidad"
+        matInput
+        type="number"
+        placeholder="Cantidad"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Tipo</mat-label>
+      <mat-select formControlName="tipo" placeholder="Tipo de operación">
+        <mat-option value="Incremento">Incremento</mat-option>
+        <mat-option value="Decremento">Decremento</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Estado</mat-label>
+      <mat-select formControlName="estado" placeholder="Estado de la operación">
+        <mat-option value="Pendiente">Pendiente</mat-option>
+        <mat-option value="Validado">Validado</mat-option>
+        <mat-option value="Cancelado">Cancelado</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>{{"close" | translate}}</button>
+  <button
+    style="margin-left: 8px"
+    mat-raised-button
+    color="primary"
+    (click)="addCaja()"
+  >
+    {{ actionBtn }}
+  </button>
+</div>

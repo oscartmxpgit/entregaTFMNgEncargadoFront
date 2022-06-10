@@ -1,0 +1,125 @@
+<mat-toolbar class="mat-typography mat-app-background">
+  <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+
+  <span fxFlex>
+    <button class="toolbar-main-btn" (click)="goHome()"
+      mat-icon-button
+      aria-label="icon-button with menu icon">
+    <span style="font-size:22px">
+      {{ 'Pages.Dashboard.Headline' | translate}}
+    </span>
+    </button>
+</span>
+<button mat-button [matMenuTriggerFor]="negocioMenu">
+  <mat-icon class="mr">business</mat-icon>
+</button>
+<mat-menu #negocioMenu="matMenu" xPosition="before">
+  <div *ngFor="let item of negocios">
+    <button [hidden]="!auth.isAuthenticated()" mat-button (click)="cambiaNegocio(item.idNegocio)">
+        {{item.nombre}}
+    </button>
+  </div>
+  <mat-divider></mat-divider>
+  <button mat-menu-item routerLink="negocios">{{"Navbar.ManageBusiness" | translate}}</button>
+</mat-menu>
+<button mat-button *ngFor="let item of menuItems"
+    [fxShow]="item.showOnDesktop"
+    routerLink={{item.link}}
+    [fxShow.xs]="item.showOnMobile"
+    [fxShow.sm]="item.showOnTablet">
+    <mat-icon class="mr">{{item.icon}}</mat-icon>
+    {{item.label | translate}}
+</button>
+<ng-container *ngIf="!auth.isAuthenticated()">
+  <button mat-button [matMenuTriggerFor]="usuarioNoAuth"><mat-icon class="mr">supervised_user_circle_outline</mat-icon></button>
+</ng-container>
+<ng-container *ngIf="auth.isAuthenticated()">
+  <button mat-button [matMenuTriggerFor]="usuarioAuth"><mat-icon class="mr">supervised_user_circle_outline</mat-icon></button>
+</ng-container>
+<mat-menu #usuarioNoAuth="matMenu" xPosition="before">
+  <button mat-menu-item routerLink="/login">{{"Auth.Login" | translate}}</button>
+  <button mat-menu-item routerLink="/register">{{"Auth.Register" | translate}}</button>
+</mat-menu>
+<mat-menu #usuarioAuth="matMenu" xPosition="before">
+  <button mat-menu-item routerLink="/usuario">{{auth.getUsername()}}</button>
+  <button mat-menu-item (click)="logout()">{{"Auth.Logout" | translate}}</button>
+</mat-menu>
+<button mat-icon-button [matMenuTriggerFor]="matmenu">
+  <mat-icon>public</mat-icon>
+</button>
+<mat-menu #matmenu="matMenu">
+  <button mat-menu-item (click)="changeLanguage('es')">
+    <mat-icon>flag</mat-icon>
+    <span>Español</span>
+  </button>
+  <button mat-menu-item (click)="changeLanguage('en')">
+    <mat-icon>flag</mat-icon>
+    <span>English</span>
+  </button>
+</mat-menu>
+<button
+    title="Toggle theme"
+    aria-label="Toggle theme"
+    mat-icon-button
+    (click)="toggleTheme()"
+   >
+   <mat-icon>{{ (isDark$ | async) ? "light_mode" : "dark_mode" }}</mat-icon>
+  </button>
+<ng-container>
+    <button mat-icon-button [matMenuTriggerFor]="dropMenu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #dropMenu="matMenu">
+        <ng-container *ngFor="let item of menuItems">
+            <div [fxShow]="!item.showOnDesktop"
+                 routerLink={{item.link}}
+                 [fxShow.sm]="!item.showOnTablet"
+                 [fxShow.xs]="!item.showOnMobile">
+                <button mat-menu-item>
+                    <mat-icon class="mr">{{item.icon}}</mat-icon>
+                    {{item.label | translate}}
+                </button>
+            </div>
+        </ng-container>
+    </mat-menu>
+</ng-container>
+
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+    <img
+      class="avatar mat-elevation-z8"
+      src= "/assets/img/1.jpg" alt="logoImage"
+    />
+    <h1><a routerLink="/home">eCarta</a></h1>
+    <p class="designation" [hidden]="!auth.isAuthenticated() || neg.getStoredNegocioId()==undefined">  {{"Navbar.1business" | translate}} : {{negocio?.nombre}}</p>
+    <div>
+      <button [hidden]="!auth.isAuthenticated()" routerLink="/usuario" mat-button >
+        <mat-icon class="mr">person</mat-icon>
+        {{"Navbar.Manager" | translate}}:<div>{{auth.getUsername()}}</div>
+      </button>
+    </div>
+    <mat-divider></mat-divider>
+    <button [disabled]="neg.getStoredNegocioId()==undefined" mat-button *ngFor="let item of sideNavItems"
+        routerLink={{item.link}}>
+        <mat-icon class="mr">{{item.icon}}</mat-icon>
+        {{item.label | translate}}
+    </button>
+    <mat-divider></mat-divider>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

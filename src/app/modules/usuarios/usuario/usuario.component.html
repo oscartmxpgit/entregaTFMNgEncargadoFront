@@ -1,0 +1,18 @@
+<mat-card class="main-dashboard-card">
+
+<div class="container" >
+  <h1>Encargado de negocio</h1>
+  <h3>Usuario actual (DNI): {{username}}</h3>
+  <div *ngIf="isLoaded">
+    <h3>Nombre: {{encargado?.nombre}}</h3>
+    <h3>Correo: {{encargado?.correo}}</h3>
+    <h3>Teléfono: {{encargado?.telefono}}</h3>
+  </div>
+
+</div>
+
+
+<button mat-icon-button (click)="editUsuario(encargado)">
+  <mat-icon>edit</mat-icon>Cambiar información
+</button>
+</mat-card>

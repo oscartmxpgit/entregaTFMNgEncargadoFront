@@ -1,0 +1,45 @@
+<h1 mat-dialog-title>{{actionHeader}} Plato</h1>
+<div mat-dialog-content>
+  <form [formGroup]="platoForm">
+    <mat-form-field appearance="outline">
+      <mat-label>{{"Dishes.Name" | translate}}</mat-label>
+      <input
+        formControlName="nombre"
+        matInput
+        placeholder="Nombre de plato"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{"Dishes.Price" | translate}}</mat-label>
+      <input
+        formControlName="precio"
+        matInput
+        type="number"
+        placeholder="Placeholder"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Stock</mat-label>
+      <input
+        formControlName="stock"
+        matInput
+        type="number"
+        placeholder="Placeholder"
+      />
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>{{"close" | translate}}</button>
+  <button
+    style="margin-left: 8px"
+    mat-raised-button
+    color="primary"
+    (click)="addPlato()"
+  >
+    {{ actionBtn }}
+  </button>
+</div>

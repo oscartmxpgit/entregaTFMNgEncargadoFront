@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>{{actionHeader}} Mesa</h1>
+<div mat-dialog-content>
+  <form [formGroup]="mesaForm">
+    <mat-form-field appearance="outline">
+      <mat-label>{{"Tables.TableNum" | translate}}</mat-label>
+      <input
+        formControlName="noMesa"
+        matInput
+        type="number"
+        placeholder="Número de mesa"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{"Tables.NumPersons" | translate}}</mat-label>
+      <input #personasInput
+        formControlName="personas"
+        matInput
+        type="number"
+        placeholder="Número máximo de personas"
+      />
+    </mat-form-field>
+
+  </form>
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>{{"close" | translate}}</button>
+  <button
+    style="margin-left: 8px"
+    mat-raised-button
+    color="primary"
+    (click)="addMesa()"
+  >
+    {{ actionBtn }}
+  </button>
+</div>

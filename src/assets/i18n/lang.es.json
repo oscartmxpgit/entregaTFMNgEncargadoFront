@@ -1,0 +1,101 @@
+{
+  "Pages": {
+    "Dashboard": {
+      "Title": "Dashboard",
+      "Headline": "eCarta - Admin",
+      "welcomeText": "¡Comencemos! Una vez que has creado tus negocios, puedes seleccionar uno. ¡Puedes crear tantos como quieras!",
+      "welcomeText1": "El propósito de esta web es que funcione como una aplicación que permita la gestión de todo el proceso de venta y de tareas de los negocios que brindan servicios gastronómicos.",
+      "welcomeText2": "La motivación del trabajo es la necesidad de simplificar los procesos relacionados con la gestión de tareas y de las ventas en negocios gastronómicos, desde cualquier lugar y dispositivo, sincronizando la información en tiempo real.",
+      "aboutinfotutor": "Tutor",
+      "aboutinfoauthor": "Autor"
+    },
+    "Stats": {
+      "Title": "Stats Lists",
+      "Headline": "Welcome to Stats"
+    },
+    "StatsList": {
+      "Title": "Stats List"
+    }
+  },
+  "Navbar": {
+    "business":"Negocios",
+    "1business":"Negocio",
+    "ManageBusiness":"Gestionar negocios",
+    "Manager":"Encargado",
+    "stats":"Estadísticas",
+    "user":"Usuario",
+    "about":"Acerca de"
+  },
+  "Sidenav": {
+    "business":"Negocios",
+    "home":"Inicio",
+    "employees":"Empleados",
+    "tables":"Mesas",
+    "dishes":"Platos",
+    "cash":"Caja",
+    "input":"Insumos",
+    "providers":"Proveedores"
+  },
+  "Table":{
+    "CreateNew":"Nuevo elemento",
+    "CreateNewTip":"Create a new element",
+    "Update":"Actualizar",
+    "UpdateTip":"Update table",
+    "Filter":"Filter",
+    "Evaluate":"Evaluar"
+  },
+  "Paginator":{
+    "NextPage": "Página siguiente",
+    "Previous page": "Página anterior",
+    "First page": "Primera página",
+    "Last page": "Última página",
+    "of": "de"
+  },
+  "Auth":{
+    "Login": "Entrar",
+    "Logout": "Salir",
+    "Register": "Registrarse"
+  },
+  "error404": "404 Error",
+  "angularStatsListsApp": "eCarta, app hecha con Angular",
+  "close":"Cerrar",
+  "password":"Contraseña",
+  "actions":"Acciones",
+  "Cash":{
+    "State":"Estado",
+    "Header":"Operación de caja",
+    "Import":"Importe",
+    "Type":"Tipo",
+    "Increment":"Incremento",
+    "Decrement":"Decremento",
+    "Result":"Diferencia",
+    "Product":"Producto",
+    "OperationDate":"Fecha de operación",
+    "GrowthRate":"Tasa de crecimiento",
+    "Quantity":"Cantidad"
+  },
+  "Bussines":{
+    "Name":"Nombre",
+    "Address":"Dirección",
+    "Type":"Tipo de Negocio"
+  },
+  "Employees":{
+    "FullName":"Nombre empleado",
+    "Phone":"Teléfono",
+    "Email":"Email"
+  },
+  "Tables":{
+    "TableNum":"Número de mesa",
+    "NumPersons":"Número de personas",
+    "RequestState":"Estado de Pedido"
+  },
+  "Dishes":{
+    "Name":"Nombre",
+    "Price":"Precio"
+  },
+  "Inputs":{
+    "Name":"Nombre insumo",
+    "State":"Estado",
+    "Price":"Precio"
+  }
+}

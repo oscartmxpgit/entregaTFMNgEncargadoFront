@@ -1,0 +1,40 @@
+<mat-card class="main-dashboard-card">
+  <mat-card-title-group>
+    <mat-card-title> {{ "Pages.Dashboard.Headline" | translate }}</mat-card-title>
+    <mat-card-subtitle>TFM 2022</mat-card-subtitle>
+  </mat-card-title-group>
+  <mat-card-content>
+    <div fxLayout="row">
+      <div fxFlex="10" fxFlex.gt-sm="10">
+        <h1 class="section-title">
+
+        </h1>
+      </div>
+      <div fxFlex="110" fxFlex.gt-sm="110">
+        <p>{{ "Pages.Dashboard.welcomeText1" | translate }}</p>
+      </div>
+    </div>
+  </mat-card-content>
+
+</mat-card>
+<mat-card style="margin-top: 10px" class="main-dashboard-card">
+  <p>{{ "Pages.Dashboard.welcomeText2" | translate }}</p>
+</mat-card>
+
+<mat-card style="margin-top: 10px" class="main-dashboard-card">
+  <div fxLayout="row">
+    <div fxFlex="110" fxFlex.gt-sm="110">
+      <h2 class="section-title">
+        <p>{{ "Pages.Dashboard.welcomeText" | translate }}
+          <a routerLink="/negocios">{{ "Sidenav.business" | translate }}</a>.
+        </p>
+      </h2>
+
+    </div>
+    <div fxFlex="10" fxFlex.gt-sm="10">
+
+    </div>
+  </div>
+
+
+</mat-card>

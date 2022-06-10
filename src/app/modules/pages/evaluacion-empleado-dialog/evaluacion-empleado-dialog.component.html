@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>{{actionHeader}} Evaluación</h1>
+<div mat-dialog-content>
+  <form [formGroup]="evalEmpForm">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Empleado</mat-label>
+      <mat-select formControlName="idEmpleado" placeholder="Empleado">
+        <mat-option *ngFor="let emp of empleados"
+           [value]=emp.idEmpleado>{{emp.nombre}}-{{emp.dni}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Criterio</mat-label>
+      <mat-select formControlName="criterio" placeholder="Criterio de evalución">
+        <mat-option value="Puntualidad">Puntualidad</mat-option>
+        <mat-option value="Communicación">Communicación</mat-option>
+        <mat-option value="Resolución de problemas">Resolución de problemas</mat-option>
+        <mat-option value="Colaboración con el equipo">Colaboración con el equipo</mat-option>
+        <mat-option value="Trabajo diario">Trabajo diario</mat-option>
+        <mat-option value="Conocimientos">Conocimientos</mat-option>
+        <mat-option value="Cumple tareas">Cumple tareas</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Evaluación</mat-label>
+      <input
+        formControlName="evaluacion"
+        matInput
+        type="number"
+        placeholder="Evaluación"
+      />
+    </mat-form-field>
+
+  </form>
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>{{"close" | translate}}</button>
+  <button
+    style="margin-left: 8px"
+    mat-raised-button
+    color="primary"
+    (click)="addEvalEmp()"
+  >
+    {{ actionBtn }}
+  </button>
+</div>

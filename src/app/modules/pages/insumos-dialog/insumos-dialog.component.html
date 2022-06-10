@@ -1,0 +1,61 @@
+<h1 mat-dialog-title>{{actionHeader}} Insumo</h1>
+<div mat-dialog-content>
+  <form [formGroup]="insumoForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre Insumo</mat-label>
+      <input
+        formControlName="nombre"
+        matInput
+        placeholder="Nombre de insumo"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>stock</mat-label>
+      <input
+        formControlName="stock"
+        matInput
+        type="number"
+        placeholder="Stock"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Precio</mat-label>
+      <input
+        formControlName="precio"
+        matInput
+        type="number"
+        placeholder="precio"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Estado</mat-label>
+      <mat-select formControlName="estado" placeholder="Estado del insumo">
+        <mat-option value="Pagado">Pagado</mat-option>
+        <mat-option value="Pendiente">Pendiente</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>{{"close" | translate}}</button>
+  <button [hidden]="pasadoCaja"
+    style="margin-left: 8px"
+    mat-raised-button
+    color="primary"
+    (click)="pasaraCaja()"
+  >
+    Pasar a caja
+  </button>
+  <button
+    style="margin-left: 8px"
+    mat-raised-button
+    color="primary"
+    (click)="addInsumo()"
+  >
+    {{ actionBtn }}
+  </button>
+</div>

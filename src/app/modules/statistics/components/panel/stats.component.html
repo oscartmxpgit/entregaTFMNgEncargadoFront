@@ -1,0 +1,19 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <ul class="list-group mb-4">
+        <li class="list-group-item" routerLinkActive="active" routerLink="/estadisticas/line-chart">Ventas mensuales</li>
+        <li class="list-group-item" routerLinkActive="active" routerLink="/estadisticas/bar-chart">Ventas por productos</li>
+        <li class="list-group-item" routerLinkActive="active" routerLink="/estadisticas/doughnut-chart">Ingresos vs. gastos </li>
+        <li class="list-group-item" routerLinkActive="active" routerLink="/estadisticas/radar-chart">Análisis de destrezas de los empleados</li>
+
+      </ul>
+    </div>
+
+    <div class="col-md-9">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</div>
