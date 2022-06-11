@@ -36,6 +36,10 @@ export class InsumosComponent implements OnInit {
         this.snackBar.open("Insumo eliminado", "Ok", {
           duration: 2000,
         });
+        let currentUrl = this.router.url;
+        this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+          this.router.navigate([currentUrl]);
+          });
       },error:()=>{
         alert("error")
       }

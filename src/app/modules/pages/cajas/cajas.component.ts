@@ -99,6 +99,10 @@ export class CajasComponent implements OnInit {
         this.snackBar.open("Operación eliminada", "Ok", {
           duration: 2000,
         });
+        let currentUrl = this.router.url;
+        this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+          this.router.navigate([currentUrl]);
+        });
       },error:()=>{
         alert("error")
       }
@@ -107,7 +111,7 @@ export class CajasComponent implements OnInit {
 
 
   getAllCajas(){
-    this.cajaService.getCajas()
+    this.cajaService.getOpCajas()
     .subscribe({
       next : (res: any[])=>{
           this.dataSource = new MatTableDataSource(res);

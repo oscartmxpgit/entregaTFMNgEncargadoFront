@@ -15,9 +15,14 @@ export class CajaService {
     return this.http.post<any>(`${this.baseURL}`,data);
   }
 
-  getCajas(){
+  getOpCajas(){
     var negocioId= this.negocioService.getStoredNegocioId()
     return this.http.get<any>(`${this.baseURL}/negocio/${negocioId}`);
+  }
+
+  getOpCajasValidadas(){
+    var negocioId= this.negocioService.getStoredNegocioId()
+    return this.http.get<any>(`${this.baseURL}/validadas/negocio/${negocioId}`);
   }
 
   getIncrementosCaja(){

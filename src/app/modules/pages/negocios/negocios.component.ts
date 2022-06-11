@@ -37,6 +37,7 @@ export class NegociosComponent implements OnInit {
       if(val == 'Guardar'){
         this.getNegociosPorEncargado();
       }
+      window.location.reload();
     })
   }
 
@@ -75,10 +76,7 @@ export class NegociosComponent implements OnInit {
         this.snackBar.open("Negocio eliminado", "Ok", {
           duration: 2000,
         });
-        let currentUrl = this.router.url;
-          this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-            this.router.navigate([currentUrl]);
-          });
+        window.location.reload();
       },error:()=>{
 
         alert("error")

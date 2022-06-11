@@ -37,6 +37,10 @@ export class PlatosComponent implements OnInit {
         this.snackBar.open("Plato eliminado", "Ok", {
           duration: 2000,
         });
+        let currentUrl = this.router.url;
+          this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+            this.router.navigate([currentUrl]);
+          });
       },error:()=>{
         alert("error")
       }

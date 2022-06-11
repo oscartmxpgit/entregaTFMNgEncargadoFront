@@ -19,7 +19,7 @@ export class LineChartComponent {
 
   constructor(private cajaService:CajaService, private snackBar: MatSnackBar, negocioService:NegocioService) {
     if (negocioService.getStoredNegocioId()){
-      this.cajaService.getCajas()
+      this.cajaService.getOpCajasValidadas()
       .subscribe({
         next : (res: any[])=>{
           var gv:any[]=  [];
@@ -64,7 +64,6 @@ export class LineChartComponent {
   }
 
   lineChartData: ChartDataSets[] = [
-    //{ data: [85, 72, 78, 75, 77, 75], label: 'Ventas de platos' },
     { data: this.ganancias, label: 'Ventas de platos' },
   ];
 

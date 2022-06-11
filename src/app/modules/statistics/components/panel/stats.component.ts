@@ -8,20 +8,14 @@ import { CajaService } from 'src/app/services/caja.service';
   styleUrls: ['./stats.component.sass']
 })
 export class StatsComponent implements OnInit {
-  operacionesCaja: any[] = [];
 
   constructor(private cajaService: CajaService, private snackBar: MatSnackBar) {
-    if (localStorage.getItem('ecarta_idNegocio') != null) {
-      this.cajaService.getCajas().subscribe(
-        (data) => {
-          this.operacionesCaja = data;
-        }
-      )
-    }
-    else
+    if (localStorage.getItem('ecarta_idNegocio') == null) {
+
       this.snackBar.open("Bienvenido. Elige un negocio para continuar", "Ok", {
         duration: 2000,
       });
+    }
   }
 
   ngOnInit(): void {

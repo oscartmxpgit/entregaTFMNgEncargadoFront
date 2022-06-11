@@ -14,7 +14,6 @@ import { ReplaySubject } from 'rxjs-compat';
 })
 export class MesadialogComponent implements OnInit,AfterViewInit {
   mesaForm !: FormGroup;
-  numMesa=1;
 
   actionBtn : string ="Guardar";
   actionHeader : string ="Crear";

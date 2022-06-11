@@ -29,7 +29,6 @@ export class MesasComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllMesas();
-    this.maxNumMesa();
   }
 
   estadoPedido(estadoPedido){
@@ -58,6 +57,7 @@ export class MesasComponent implements OnInit {
         this.snackBar.open("Mesa eliminada", "Ok", {
           duration: 2000,
         });
+        this.actualizaPagina();
       },error:()=>{
         alert("error")
       }
@@ -65,32 +65,15 @@ export class MesasComponent implements OnInit {
   }
 
 
-  async maxNumMesa():Promise<any>{
-    await this.ms.getMesas()
-    .subscribe({
-      next : (res: any[])=>{
-          res.forEach(element => {
-            if (element.noMesa>this.numMesas)
-            this.numMesas=element.noMesa;
-          });
-      },
-      error:(err)=>{
-        alert("Error! " + JSON.stringify(err));
-      }
-    })
-  }
-
   openDialog() {
-    this.maxNumMesa().then(()=>{
       this.dialogm.open(MesadialogComponent, {
         width : '60%',
-        data:this.numMesas
+        data:this.dataSource.data.length
       }).afterClosed().subscribe(val=>{
         if(val == 'Guardar'){
           this.getAllMesas();
         }
       })
-    });
   }
 
   getAllMesas(){
