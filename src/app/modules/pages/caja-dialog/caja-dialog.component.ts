@@ -86,7 +86,6 @@ export class CajaDialogComponent implements OnInit {
 
     var putData={
       ...this.cajaForm.value,
-      fechaHora:now,
       idNegocio:idNeg,
       idOperacionesCaja:this.editData.idOperacionesCaja
     };

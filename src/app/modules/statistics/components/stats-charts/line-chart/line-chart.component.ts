@@ -25,10 +25,10 @@ export class LineChartComponent {
           var gv:any[]=  [];
           this.operacionesCaja = res;
 
-          var groubedByProducto = this.groupBy(this.operacionesCaja, 'fechaHora');
+          var groubedByFecha = this.groupBy(this.operacionesCaja, 'fechaHora');
 
-          Object.keys(groubedByProducto).forEach(function(key) {
-            var value = groubedByProducto[key];
+          Object.keys(groubedByFecha).forEach(function(key) {
+            var value = groubedByFecha[key];
             value.forEach(element => {
               var importe=element.cantidad*element.importe;
               var value={importe,key}

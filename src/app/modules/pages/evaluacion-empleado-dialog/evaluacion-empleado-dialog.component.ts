@@ -64,7 +64,7 @@ export class EvaluacionEmpleadoDialogComponent implements OnInit {
         this.evalEmpService.postEvalEmpl(postData)
         .subscribe({
           next :(res) => {
-            this.snackBar.open("EvalEmp creado", "Ok", {
+            this.snackBar.open("Evaluación añadida", "Ok", {
               duration: 2000,
             });
             this.evalEmpForm.reset();

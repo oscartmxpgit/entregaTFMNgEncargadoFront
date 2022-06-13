@@ -150,7 +150,6 @@ export class CajasComponent implements OnInit {
 
     var putData={
       ...row,
-      fechaHora:now,
       idNegocio:idNeg,
     };
     this.cajaService.putCaja(putData,row.idOperacionesCaja)
